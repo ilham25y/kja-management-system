@@ -52,8 +52,8 @@
 <script src="https://cdn.jsdelivr.net/npm/@supabase/supabase-js@2"></script>
 <script>
 // Isi URL dan anon key dari Supabase Project Settings > API.
-const SUPABASE_URL =https://cabznndadybgcvkhkwhj.supabase.co ;
-const SUPABASE_ANON_KEY =sb_publishable_zsGXYlXOpETqBRawcd5zmg_J7ajCgGX ;
+const SUPABASE_URL = 'https://cabznndadybgcvkhkwhj.supabase.co';
+const SUPABASE_ANON_KEY = 'sb_publishable_zsGXYlXOpETqBRawcd5zmg_J7ajCgGX';
 let supabaseClient = null, currentUser = null, cloudReady = false;
 function cloudConfigured(){return SUPABASE_URL.startsWith('https://') && SUPABASE_ANON_KEY.length>20 && !SUPABASE_URL.includes('ISI_') && !SUPABASE_ANON_KEY.includes('ISI_')}
 function authMsg(t){document.getElementById('authMessage').textContent=t||''}
