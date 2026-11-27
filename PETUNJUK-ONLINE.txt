@@ -1,0 +1,38 @@
+KJA MANAGEMENT SYSTEM — VERSI ONLINE / SINKRONISASI ANTAR PERANGKAT
+
+Paket ini menggunakan Supabase sebagai database cloud dan GitHub Pages sebagai hosting statis.
+Data akan sama ketika masuk dengan akun yang sama dari HP dan komputer.
+
+LANGKAH 1 — BUAT DATABASE SUPABASE
+1. Buka https://supabase.com lalu daftar / masuk.
+2. Buat project baru, pilih region Singapore (umumnya dekat Indonesia).
+3. Simpan password database project dengan aman.
+4. Buka menu SQL Editor, pilih New query.
+5. Buka file supabase_schema.sql, salin seluruh isinya, lalu Run.
+6. Buka Project Settings > API. Salin Project URL dan anon/public key.
+   Jangan pernah memasukkan service_role key ke aplikasi/browser.
+7. Buka Database > Publications, aktifkan Realtime untuk tabel public.kja_data.
+8. Buka Authentication > URL Configuration dan tambahkan URL situs GitHub Pages setelah diterbitkan ke Site URL / Redirect URLs.
+
+LANGKAH 2 — HUBUNGKAN APLIKASI
+1. Buka index.html dengan editor teks.
+2. Cari baris SUPABASE_URL dan ganti teks ISI_SUPABASE_PROJECT_URL dengan Project URL.
+3. Cari SUPABASE_ANON_KEY dan ganti teks ISI_SUPABASE_ANON_KEY dengan anon/public key.
+4. Simpan index.html.
+
+LANGKAH 3 — TERBITKAN MELALUI GITHUB PAGES
+1. Buat repository GitHub baru, misalnya kja-management-system.
+2. Upload index.html sebagai file root repository.
+3. Pada Settings > Pages, pilih Deploy from a branch, branch main, folder /(root), lalu Save.
+4. Tunggu alamat GitHub Pages muncul. Buka alamat itu melalui HP dan komputer.
+5. Tambahkan alamat GitHub Pages ke Supabase Authentication > URL Configuration.
+6. Daftar akun melalui aplikasi. Gunakan email/password yang sama pada HP dan komputer.
+
+PENTING
+- Koneksi internet diperlukan untuk login, membaca, dan menyinkronkan data.
+- Data cloud berada di tabel kja_data; Row Level Security membatasi setiap akun ke baris miliknya.
+- Gunakan akun yang sama di semua perangkat agar melihat dataset yang sama.
+- Backup JSON tetap tersedia sebagai salinan tambahan.
+- Hindari mengedit data bersamaan pada dua perangkat dalam satu waktu pada versi sederhana ini; perubahan terakhir dapat menimpa perubahan yang belum tersinkron dari perangkat lain.
+- Anon/public key memang digunakan di frontend; keamanan data mengandalkan RLS. Jangan gunakan service_role key di browser.
+- Sebelum dipakai operasional, uji tambah keramba, penebaran, panen, dan sinkronisasi di dua perangkat.

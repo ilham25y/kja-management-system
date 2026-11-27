@@ -1,0 +1,19 @@
+KJA MANAGEMENT SYSTEM — PAKET OFFLINE
+
+Isi:
+- index.html: aplikasi web offline satu file.
+- Data disimpan pada localStorage browser/perangkat yang digunakan.
+- Tidak memerlukan hosting, server, atau koneksi internet setelah file tersedia.
+
+Cara menjalankan:
+1. Ekstrak ZIP.
+2. Buka index.html menggunakan browser.
+3. Gunakan menu Pengaturan untuk menyesuaikan parameter.
+4. Buat backup JSON secara berkala melalui Pengaturan > Backup & Restore.
+
+Catatan penting:
+- Ini adalah versi web offline lokal, bukan APK Android hasil kompilasi.
+- Data melekat pada profil browser/perangkat. Jangan hapus data browser sebelum membuat backup.
+- Ekspor Excel menggunakan CSV yang dapat dibuka dengan Microsoft Excel.
+- PDF dapat dibuat melalui Cetak / PDF lalu pilih "Simpan sebagai PDF" pada dialog cetak.
+- Versi ini belum menyediakan login multi-pengguna/cloud karena kebutuhan proyek adalah offline satu perangkat.
